@@ -1,5 +1,7 @@
 # Tic-Tac-Toe Game Project.
 
+![image](https://github.com/user-attachments/assets/45e841f5-1a8a-4352-b9ab-74b768e919a2)
+
 ## Content:
 
 - Tic-Tac-Toe Game Project developed in Python.
