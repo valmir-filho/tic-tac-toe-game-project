@@ -21,11 +21,9 @@ def check_winner():
 # Function for button clicks.
 def button_click(row, col):
     global current_player
-
     if buttons[row][col]["text"] == "" and not game_over:
         buttons[row][col]["text"] = current_player
         board[row][col] = current_player
-
         winner = check_winner()
         if winner:
             messagebox.showinfo("Game Over", f"Player {winner} wins!")
@@ -46,24 +44,20 @@ def reset_game():
     for row in range(3):
         for col in range(3):
             buttons[row][col]["text"] = ""
-
 # Initializing tkinter window.
 root = tk.Tk()
 root.title("Tic-Tac-Toe")
-
 # Global variables.
 current_player = "X"
 game_over = False
 board = [["" for _ in range(3)] for _ in range(3)]
 buttons = [[None for _ in range(3)] for _ in range(3)]
-
 # Creating buttons for the board.
 for row in range(3):
     for col in range(3):
         buttons[row][col] = tk.Button(root, text="", width=10, height=3, font=("Arial", 24),
                                       command=lambda row=row, col=col: button_click(row, col))
         buttons[row][col].grid(row=row, column=col)
-
 # Running the window.
 reset_game()
 root.mainloop()
